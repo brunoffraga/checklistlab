@@ -1,26 +1,27 @@
 package br.com.checklistlab.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-@Entity
+import lombok.AllArgsConstructor;
+//import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Table(name = "medicos")
+@Entity(name = "Medico")
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+//@EqualsAndHashCode(of = "id")
 public class Regiao {
     
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String nomeRegiao;
     private String nomeResponsavel;
-
-    public String getNomeRegiao() {
-        return nomeRegiao;
-    }
-    public void setNomeRegiao(String nomeRegiao) {
-        this.nomeRegiao = nomeRegiao;
-    }
-    public String getNomeResponsavel() {
-        return nomeResponsavel;
-    }
-    public void setNomeResponsavel(String nomeResponsavel) {
-        this.nomeResponsavel = nomeResponsavel;
-    }
 
 }
